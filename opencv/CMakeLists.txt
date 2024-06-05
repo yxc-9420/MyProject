@@ -1,6 +1,7 @@
+cmake_minimum_required(VERSION 3.28)
 project(opencvPro) #设置项目名称，参数任意指定
 aux_source_directory(./ SRC_CUR) #搜索当前目录下的源文件，将结果存到SRC_CUR
-aux_source_directory(src SRC_SUB)#搜索src目录下的源文件，将结果存到SRC_CUR
+aux_source_directory(src SRC_SUB)#搜索src目录下的源文件，将结果存到SRC_SUB
 
 
 find_package(OPENCV REQUIRED)

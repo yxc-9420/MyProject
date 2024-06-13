@@ -7,13 +7,28 @@
 using namespace cv;
 using namespace std;
 
-int main()
+/// @brief 显示图片
+void test1()
 {
-    const cv::String file = "cat1.jpg";
+    const cv::String file = "D:/Personal/repos/MyProject/resource/cat1.jpg";
     cv::Mat img = cv::imread(file, cv::IMREAD_COLOR);
     cv::namedWindow("cat",cv::WINDOW_KEEPRATIO);
     cv::imshow("cat",img);
+}
+
+void test2()
+{
+    cv::Size size(500,500);
+    cv::Mat img = cv::Mat::ones(size,USAGE_DEFAULT) * 255;
+    cv::line(img, {0,0}, {300,300}, {0});
+    cv::imshow("test2",img);
+}
+
+int main()
+{
+    test1();
+    test2();
     cv::waitKey(0);
-    cv::destroyWindow("cat");
+    cv::destroyAllWindows();
     return 0;
 }
